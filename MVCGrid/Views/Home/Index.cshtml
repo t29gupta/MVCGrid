@@ -1,0 +1,29 @@
+﻿@model List<MVCGrid.Models.Employee>
+
+@{
+    var grid = new WebGrid(canPage: true, rowsPerPage: 10);
+    grid.Bind(source: Model, rowCount: 20);
+}
+
+<h2>Index</h2>
+
+<div class="container">
+    <h3>Employees List</h3>
+
+    <div>
+        @grid.Table(tableStyle:"table table-responsive table-borderes",
+       columns: grid.Columns(
+           grid.Column(columnName: "ID", header: "Id"),
+           grid.Column(columnName: "Name", header: "Name"),
+           grid.Column(columnName: "EmpID", header: "Emp ID"),
+           grid.Column(columnName:"City", header:"City")
+           )
+           )
+
+        <div class="row">
+            <div class="col-sm-6">
+                
+            </div>
+        </div>
+    </div>
+</div>
